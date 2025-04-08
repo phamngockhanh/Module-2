@@ -1,6 +1,4 @@
 package ss1_introduction_to_java.bai_tap.bai3_doc_so_thanh_chu;
-
-
 import java.util.Scanner;
 
 public class DocSoThanhChu {
@@ -36,6 +34,10 @@ public class DocSoThanhChu {
                             break;
                         case 2:
                             switch (temp1) {
+                                case 0:
+                                    readTens = "Ten";
+                                    readUnit = "";
+                                    break;
                                 case 1:
                                     readTens = "Eleven";
                                     readUnit = "";
