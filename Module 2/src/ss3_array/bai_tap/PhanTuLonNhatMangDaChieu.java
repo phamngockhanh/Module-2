@@ -9,15 +9,14 @@ public class PhanTuLonNhatMangDaChieu {
         int rows = sc.nextInt();
         System.out.print("Enter cols length: ");
         int cols = sc.nextInt();
-        int[][] array = new int[rows][cols];
+        double[][] array = new double[rows][cols];
         System.out.println("Input element in array:");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.printf("At position [%d][%d]: ", i, j);
-                array[i][j] = sc.nextInt();
+                array[i][j] = sc.nextDouble();
             }
         }
-
         System.out.println("After input element: ");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
@@ -25,7 +24,7 @@ public class PhanTuLonNhatMangDaChieu {
             }
             System.out.println();
         }
-        int maxValue = array[0][0];
+        double maxValue = array[0][0];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if (maxValue < array[i][j]) {
