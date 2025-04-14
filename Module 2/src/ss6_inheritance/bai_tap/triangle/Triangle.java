@@ -49,7 +49,7 @@ public class Triangle extends Shape {
     }
 
     public boolean isTriangle() {
-        return !(this.side1 < 0) && !(this.side2 < 0) && !(this.side3 < 0) && !(this.side1 + this.side2 < this.side3) && !(this.side1 + this.side3 < this.side2) && !(this.side3 + this.side2 < this.side1);
+        return !(this.side1 <= 0) && !(this.side2 <= 0) && !(this.side3 <= 0) && !(this.side1 + this.side2 < this.side3) && !(this.side1 + this.side3 < this.side2) && !(this.side3 + this.side2 < this.side1);
 
     }
 
