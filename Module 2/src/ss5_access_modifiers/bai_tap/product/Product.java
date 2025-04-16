@@ -1,6 +1,6 @@
 package ss5_access_modifiers.bai_tap.product;
 
-public class Product {
+public class Product implements Comparable<Product> {
     private int id;
     private String name;
     private double price;
@@ -44,5 +44,14 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Product o) {
+      //  return this.id-o.id; So sánh id
+        if(this.id-o.id==0) {
+            return this.getName().compareTo(o.getName());// So sánh tên
+        }
+        return this.id-o.id;
     }
 }

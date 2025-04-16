@@ -1,6 +1,7 @@
 package ss5_access_modifiers.bai_tap.product;
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {

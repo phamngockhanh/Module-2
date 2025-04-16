@@ -1,18 +1,21 @@
 package ss5_access_modifiers.bai_tap.product;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ProductManager {
-    private static Product[] products = new Product[100];
+    private static Product[] products = new Product[3];
     public Scanner sc = new Scanner(System.in);
 
     static {
-        products[0] = new Product(1, "kẹo kera", 158.0);
-        products[1] = new Product(2, "Keo Kera2", 158.0);
-        products[2] = new Product(3, "Keo Kera3", 158.0);
+        products[0] = new Product(3, "kẹo kera", 158.0);
+        products[1] = new Product(2, "huda 123", 158.0);
+        products[2] = new Product(2, "tiger 123", 158.0);
     }
 
     public void display() {
+        //Arrays.sort(products); Dùng comparable
+        Arrays.sort(products,new CompareByName()); // Dùng comparator
         for (int i = 0; i < products.length; i++) {
             if (products[i] != null) {
                 System.out.println(products[i]);
