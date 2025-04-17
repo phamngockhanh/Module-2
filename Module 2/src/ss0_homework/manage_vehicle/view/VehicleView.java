@@ -27,4 +27,10 @@ public class VehicleView {
         }
     }
 
+    public static boolean deleteConfirm2(){
+        System.out.println("Bạn có muốn xóa không?");
+        String confirm=scanner.nextLine();
+        return confirm.equals("Có") || confirm.equals("có") || confirm.equals("Co") || confirm.equals("co");
+    }
+
 }

@@ -9,5 +9,6 @@ public interface ICarRepository {
     void add(Car car);
     void findNumberPlate(String numberPlate);
     void delete(String numberPlate);
+    void delete1(Car car);
     //void update(int id, ArrayList<Car> cars);
 }

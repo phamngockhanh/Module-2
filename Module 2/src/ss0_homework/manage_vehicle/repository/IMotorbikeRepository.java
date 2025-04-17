@@ -9,4 +9,5 @@ public interface IMotorbikeRepository {
     void add(Motorbike motorbike);
     void findNumberPlate(String numberPlate);
     void delete(String numberPlate);
+    void delete1(Motorbike motorbike);
 }

@@ -46,6 +46,13 @@ public class CarRepository implements ICarRepository {
         }
     }
 
+    @Override
+    public void delete1(Car car) {
+        cars.remove(car);
+    }
+
+
+
 
 }
 

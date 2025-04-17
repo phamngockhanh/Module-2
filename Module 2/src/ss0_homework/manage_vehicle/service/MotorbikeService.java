@@ -30,5 +30,4 @@ public class MotorbikeService implements IMotorbikeService {
         iMotorbikeRepository.delete(numberPlate);
     }
 
-
 }

@@ -1,8 +1,6 @@
 package ss0_homework.manage_vehicle.repository;
 
 import ss0_homework.manage_vehicle.common.DeleteFlag;
-import ss0_homework.manage_vehicle.entity.Car;
-import ss0_homework.manage_vehicle.entity.Motorbike;
 import ss0_homework.manage_vehicle.entity.Truck;
 
 import java.util.ArrayList;
@@ -48,5 +46,10 @@ public class TruckRepository implements ITruckRepository {
                 break;
             }
         }
+    }
+
+    @Override
+    public void delete1(Truck truck) {
+        trucks.remove(truck);
     }
 }

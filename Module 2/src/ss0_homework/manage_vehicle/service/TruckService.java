@@ -26,4 +26,5 @@ public class TruckService implements ITruckService {
         iTruckRepository.delete(numberPlate);
     }
 
+
 }

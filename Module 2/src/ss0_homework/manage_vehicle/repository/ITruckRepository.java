@@ -10,4 +10,5 @@ public interface ITruckRepository {
     void add(Truck truck);
     void findNumberPlate(String numberPlate);
     void delete(String numberPlate);
+    void delete1(Truck truck);
 }
