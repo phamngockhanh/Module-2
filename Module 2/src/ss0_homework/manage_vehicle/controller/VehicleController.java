@@ -51,7 +51,6 @@ public class VehicleController {
 //                    }
 
                     //Cách 2:
-
                     String numberPlate = VehicleView.findNumberPlate();
                     Vehicle vehicle = vehicleService.checkNumberPlate(numberPlate);
                     if (vehicle != null) {
