@@ -1,0 +1,15 @@
+package ss12_arraylist_linkedlist.bai_tap.product_management.service;
+
+import ss12_arraylist_linkedlist.bai_tap.product_management.entity.Product;
+import ss12_arraylist_linkedlist.bai_tap.product_management.repository.IProductRepository;
+import ss12_arraylist_linkedlist.bai_tap.product_management.repository.ProductRepository;
+
+import java.util.ArrayList;
+
+public class ProductService implements IProductService{
+    IProductRepository iProductRepository = new ProductRepository();
+    @Override
+    public ArrayList<Product> search(String name) {
+        return iProductRepository.search(name);
+    }
+}
