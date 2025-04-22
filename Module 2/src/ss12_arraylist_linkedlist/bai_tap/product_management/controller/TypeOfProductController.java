@@ -6,8 +6,10 @@ import ss12_arraylist_linkedlist.bai_tap.product_management.entity.Computer;
 import ss12_arraylist_linkedlist.bai_tap.product_management.entity.Phone;
 import ss12_arraylist_linkedlist.bai_tap.product_management.service.ComputerService;
 import ss12_arraylist_linkedlist.bai_tap.product_management.service.PhoneService;
+import ss12_arraylist_linkedlist.bai_tap.product_management.service.ProductService;
 import ss12_arraylist_linkedlist.bai_tap.product_management.view.ComputerView;
 import ss12_arraylist_linkedlist.bai_tap.product_management.view.PhoneView;
+import ss12_arraylist_linkedlist.bai_tap.product_management.view.ProductView;
 
 import java.util.Scanner;
 
@@ -155,6 +157,33 @@ public class TypeOfProductController {
                     }
                     break;
                 case 3:
+                    break;
+                default:
+                    flag = false;
+            }
+        } while (flag);
+    }
+
+    public static void menuForArrangeFunction() {
+        boolean flag = true;
+        ProductService productService = new ProductService();
+        do {
+            System.out.println("Sắp xếp theo" +
+                    "\n 1.Giá tăng dần" +
+                    "\n 2.Giá giảm dần" +
+                    "\n 3.Thoát"
+            );
+            System.out.println("Chọn chức năng");
+            int choose = Integer.parseInt(sc.nextLine());
+            switch (choose) {
+                case 1:
+                    ProductView.ascendingOrder(productService.ascendingOrder());
+                    break;
+                case 2:
+                    ProductView.decreasingOrder(productService.decreasingOrder());
+                    break;
+                case 3:
+                    flag = false;
                     break;
                 default:
                     flag = false;

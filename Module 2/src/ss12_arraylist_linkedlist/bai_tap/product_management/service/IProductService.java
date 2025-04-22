@@ -6,4 +6,6 @@ import java.util.ArrayList;
 
 public interface IProductService {
     ArrayList<Product> search(String name);
+    ArrayList<Product> ascendingOrder();
+    ArrayList<Product> decreasingOrder();
 }

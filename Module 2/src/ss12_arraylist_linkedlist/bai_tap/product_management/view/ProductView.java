@@ -19,4 +19,17 @@ public class ProductView {
             System.out.println(product);
         }
     }
+
+
+    public static void ascendingOrder(ArrayList<Product> products) {
+        for (Product product : products) {
+            System.out.println(product);
+        }
+    }
+
+    public static void decreasingOrder(ArrayList<Product> products) {
+        for (Product product : products) {
+            System.out.println(product);
+        }
+    }
 }

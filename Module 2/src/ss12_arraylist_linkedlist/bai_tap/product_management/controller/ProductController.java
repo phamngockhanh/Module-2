@@ -46,10 +46,12 @@ public class ProductController {
                     ProductView.display(productService.search(name));
                     break;
                 case 6:
+                    TypeOfProductController.menuForArrangeFunction();
                     break;
                 case 7:
                     break;
                 default:
+                    flag = false;
                     break;
             }
 
