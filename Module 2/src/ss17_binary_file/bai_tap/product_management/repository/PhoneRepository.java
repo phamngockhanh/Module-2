@@ -1,15 +1,15 @@
-package ss16_text_file.bai_tap.product_management.repository;
+package ss17_binary_file.bai_tap.product_management.repository;
 
-import ss16_text_file.bai_tap.product_management.common.Flag;
-import ss16_text_file.bai_tap.product_management.common.ReadAndWriteFile;
-import ss16_text_file.bai_tap.product_management.entity.Phone;
+import ss17_binary_file.bai_tap.product_management.common.Flag;
+import ss17_binary_file.bai_tap.product_management.common.ReadAndWriteFile;
+import ss17_binary_file.bai_tap.product_management.entity.Phone;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class PhoneRepository implements IPhoneRepository {
-    public final String FILE_PATH = "C:\\Codegym module 2\\Module 2\\src\\ss16_text_file\\bai_tap\\product_management\\data\\ListPhone.txt";
+    public final String FILE_PATH = "C:\\Codegym module 2\\Module 2\\src\\ss17_binary_file\\bai_tap\\product_management\\data\\ListPhone.txt";
 
     @Override
     public ArrayList<Phone> findAll() {

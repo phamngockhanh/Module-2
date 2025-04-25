@@ -1,15 +1,15 @@
-package ss16_text_file.bai_tap.product_management.controller;
+package ss17_binary_file.bai_tap.product_management.controller;
 
 import ss0_homework.manage_vehicle.common.DeleteFlag;
-import ss16_text_file.bai_tap.product_management.common.Flag;
-import ss16_text_file.bai_tap.product_management.entity.Computer;
-import ss16_text_file.bai_tap.product_management.entity.Phone;
-import ss16_text_file.bai_tap.product_management.service.ComputerService;
-import ss16_text_file.bai_tap.product_management.service.PhoneService;
-//import ss16_text_file.bai_tap.product_management.service.ProductService;
-import ss16_text_file.bai_tap.product_management.view.ComputerView;
-import ss16_text_file.bai_tap.product_management.view.PhoneView;
-import ss16_text_file.bai_tap.product_management.view.ProductView;
+import ss17_binary_file.bai_tap.product_management.common.Flag;
+import ss17_binary_file.bai_tap.product_management.entity.Computer;
+import ss17_binary_file.bai_tap.product_management.entity.Phone;
+import ss17_binary_file.bai_tap.product_management.service.ComputerService;
+import ss17_binary_file.bai_tap.product_management.service.PhoneService;
+//import ss17_binary_file.bai_tap.product_management.service.ProductService;
+import ss17_binary_file.bai_tap.product_management.view.ComputerView;
+import ss17_binary_file.bai_tap.product_management.view.PhoneView;
+import ss17_binary_file.bai_tap.product_management.view.ProductView;
 
 import java.util.Scanner;
 

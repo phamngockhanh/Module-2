@@ -1,6 +1,6 @@
-package ss16_text_file.bai_tap.product_management.common;
+package ss17_binary_file.bai_tap.product_management.common;
 
-import ss16_text_file.bai_tap.product_management.entity.Computer;
+import ss17_binary_file.bai_tap.product_management.entity.Computer;
 
 import java.io.*;
 import java.util.ArrayList;

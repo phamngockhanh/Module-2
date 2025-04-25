@@ -1,30 +1,32 @@
-package ss16_text_file.bai_tap.product_management.view;
+package ss17_binary_file.bai_tap.product_management.view;
 
-import ss16_text_file.bai_tap.product_management.common.Flag;
-import ss16_text_file.bai_tap.product_management.entity.Phone;
+import ss17_binary_file.bai_tap.product_management.common.Flag;
+import ss17_binary_file.bai_tap.product_management.entity.Computer;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PhoneView {
+public class ComputerView {
     private static Scanner sc = new Scanner(System.in);
-    public static void display(ArrayList<Phone> phones){
-        for(Phone phone : phones){
-            System.out.println(phone);
+
+    public static void display(ArrayList<Computer> computers) {
+        for (Computer computer : computers) {
+            System.out.println(computer);
         }
     }
 
-    public static Phone add() {
+    public static Computer add() {
         System.out.print("Nhập id: ");
         int id = Integer.parseInt(sc.nextLine());
         System.out.print("Nhập tên: ");
         String name = sc.nextLine();
         System.out.print("Nhập giá: ");
         double price = Double.parseDouble(sc.nextLine());
-        System.out.print("Độ rõ của cam: ");
-        int cameraMP = Integer.parseInt(sc.nextLine());
-        Phone p1 = new Phone(id,name,price,cameraMP);
-        return p1;
+        System.out.print("Nhập cpu: ");
+        String cpu = sc.nextLine();
+        System.out.print("Nhập ram: ");
+        int ram = Integer.parseInt(sc.nextLine());
+        return new Computer(id,name, price, cpu, ram);
     }
 
     public static int findId() {
@@ -43,13 +45,17 @@ public class PhoneView {
         }
     }
 
-    public static Phone update(int id) {
-        System.out.print("Nhập tên: ");
+    public static Computer update(int id) {
+        System.out.print("Cập nhật lại tên: ");
         String name = sc.nextLine();
-        System.out.print("Nhập giá: ");
+        System.out.print("Cập nhật lại giá: ");
         double price = Double.parseDouble(sc.nextLine());
-        System.out.print("Độ rõ của cam: ");
-        int cameraMP = Integer.parseInt(sc.nextLine());
-        return new Phone(id,name, price, cameraMP);
+        System.out.print("Cập nhật lại cpu: ");
+        String cpu = sc.nextLine();
+        System.out.print("Cập nhật lại ram: ");
+        int ram = Integer.parseInt(sc.nextLine());
+        return new Computer(id,name, price, cpu, ram);
     }
+
+
 }

@@ -1,15 +1,16 @@
-package ss16_text_file.bai_tap.product_management.repository;
+package ss17_binary_file.bai_tap.product_management.repository;
 
-import ss16_text_file.bai_tap.product_management.common.Flag;
-import ss16_text_file.bai_tap.product_management.common.ReadAndWriteFile;
-import ss16_text_file.bai_tap.product_management.entity.Computer;
+import ss17_binary_file.bai_tap.product_management.common.Flag;
+import ss17_binary_file.bai_tap.product_management.common.ReadAndWriteFile;
+import ss17_binary_file.bai_tap.product_management.entity.Computer;
+import ss17_binary_file.bai_tap.product_management.repository.IComputerRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ComputerRepository implements IComputerRepository {
-    public final String FILE_PATH = "C:\\Codegym module 2\\Module 2\\src\\ss16_text_file\\bai_tap\\product_management\\repository\\List.txt";
-    public final String FILE_DAT_PATH = "C:\\Codegym module 2\\Module 2\\src\\ss16_text_file\\bai_tap\\product_management\\data\\student.dat";
+    public final String FILE_PATH = "C:\\Codegym module 2\\Module 2\\src\\ss17_binary_file\\bai_tap\\product_management\\repository\\List.txt";
+    public final String FILE_DAT_PATH = "C:\\Codegym module 2\\Module 2\\src\\ss17_binary_file\\bai_tap\\product_management\\data\\student.dat";
 
     @Override
     public ArrayList<Computer> findAll() {

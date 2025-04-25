@@ -1,4 +1,4 @@
-package ss16_text_file.bai_tap.product_management.entity;
+package ss17_binary_file.bai_tap.product_management.entity;
 
 import java.io.Serializable;
 

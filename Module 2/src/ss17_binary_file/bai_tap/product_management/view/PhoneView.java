@@ -1,7 +1,7 @@
-package ss16_text_file.bai_tap.product_management.view;
+package ss17_binary_file.bai_tap.product_management.view;
 
-import ss16_text_file.bai_tap.product_management.common.Flag;
-import ss16_text_file.bai_tap.product_management.entity.Phone;
+import ss17_binary_file.bai_tap.product_management.common.Flag;
+import ss17_binary_file.bai_tap.product_management.entity.Phone;
 
 import java.util.ArrayList;
 import java.util.Scanner;
