@@ -7,5 +7,6 @@ public interface IService<T> {
     void add(T t);
     boolean delete(int id);
     boolean update(T t);
+    void findId(int id);
 
 }

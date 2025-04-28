@@ -19,12 +19,34 @@ public class ComputerView {
         System.out.println("Nhập tên:");
         String name = sc.nextLine();
         System.out.println("Nhập price:");
-        Double price = Double.parseDouble(sc.nextLine());
+        double price = Double.parseDouble(sc.nextLine());
         System.out.println("Nhập dung lượng ram:");
         int ram = Integer.parseInt(sc.nextLine());
         System.out.println("Nhập :");
         String chip = sc.nextLine();
         return new Computer(id,name,price,ram,chip);
+    }
+
+    public static int findId(){
+        System.out.println("Nhập id muốn tìm:");
+        int id = Integer.parseInt(sc.nextLine());
+        return id;
+    }
+
+    public static Computer update(int id){
+        System.out.println("Nhập tên:");
+        String name = sc.nextLine();
+        System.out.println("Nhập price:");
+        double price = Double.parseDouble(sc.nextLine());
+        System.out.println("Nhập dung lượng ram:");
+        int ram = Integer.parseInt(sc.nextLine());
+        System.out.println("Nhập :");
+        String chip = sc.nextLine();
+        return new Computer(id,name,price,ram,chip);
+    }
+
+    public static void delete(){
+
     }
 
 

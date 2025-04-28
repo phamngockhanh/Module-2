@@ -19,7 +19,6 @@ public class Phone extends Product {
     public void setCameraMP(int cameraMP) {
         this.cameraMP = cameraMP;
     }
-
     @Override
     public String toString() {
         return "Phone{" +

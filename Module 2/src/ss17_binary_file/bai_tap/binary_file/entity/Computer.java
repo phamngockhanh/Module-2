@@ -1,10 +1,10 @@
 package ss17_binary_file.bai_tap.binary_file.entity;
 
-public class Computer extends Product{
+public class Computer extends Product {
     private int ram;
     private String chip;
 
-    Computer(){
+    Computer() {
     }
 
     public Computer(int ram, String chip) {
@@ -37,13 +37,13 @@ public class Computer extends Product{
     @Override
     public String toString() {
         return "Computer{" +
-                super.toString()+
+                super.toString() + "," +
                 "ram=" + ram +
                 ", chip='" + chip + '\'' +
                 '}';
     }
 
-    public String getInfor(){
-        return this.getId()+","+this.getName()+","+this.getPrice()+","+this.getRam()+","+this.getChip()+",";
+    public String getInfor() {
+        return this.getId() + "," + this.getName() + "," + this.getPrice() + "," + this.getRam() + "," + this.getChip();
     }
 }

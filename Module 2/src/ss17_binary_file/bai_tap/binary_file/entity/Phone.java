@@ -1,8 +1,10 @@
 package ss17_binary_file.bai_tap.binary_file.entity;
 
-public class Phone extends Product{
+public class Phone extends Product {
     private double cameraMP;
-    Phone(){}
+
+    Phone() {
+    }
 
     public Phone(double cameraMP) {
         this.cameraMP = cameraMP;
@@ -21,10 +23,14 @@ public class Phone extends Product{
         this.cameraMP = cameraMP;
     }
 
+    public String getInfo() {
+        return this.getId() + "," + this.getName() + "," + this.getPrice() + "," + this.getCameraMP();
+    }
+
     @Override
     public String toString() {
         return "Phone{" +
-                super.toString()+
+                super.toString() +
                 "cameraMP=" + cameraMP +
                 '}';
     }

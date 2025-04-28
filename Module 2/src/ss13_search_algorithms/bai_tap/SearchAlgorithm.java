@@ -15,37 +15,26 @@ public class SearchAlgorithm {
             }
         }
         System.out.println(Arrays.toString(arr));
-        int result = binarySearch(arr, 0, arr.length, 5);
-        if (result == -1){
+        int result = binarySearch(arr, 0, arr.length , 8);
+        if (result == -1) {
             System.out.println("Can not find this value");
-        }else{
-            System.out.printf("Position in array is %d",result);
+        } else {
+            System.out.printf("Position in array is %d", result);
         }
     }
 
     public static int binarySearch(int[] array, int left, int right, int value) {
-        int middle;
-        int count = 0;
-        boolean flag = false;
-        middle = (left + right) / 2;
-
-
-        while (count < array.length) {
+        int middle = (left + right) / 2;
+        if(left<=right){
             if (array[middle] == value) {
-                flag = true;
-                break;
+                return middle;
+            } else if (value > array[middle]) {
+                 left = middle + 1;
+            } else {
+                right = middle -1 ;
             }
-            if (value > array[middle]) {
-                middle += 1;
-            }
-            if (value < array[middle]) {
-                middle -= 1;
-            }
-            count++;
+            return binarySearch(array,left,right,value);
         }
-        if (!flag) {
-            return -1;
-        }
-        return middle;
+        return - 1;
     }
 }

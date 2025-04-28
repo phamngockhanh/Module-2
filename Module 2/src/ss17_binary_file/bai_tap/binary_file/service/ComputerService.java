@@ -28,4 +28,9 @@ public class ComputerService implements IComputerService {
     public boolean update(Computer computer) {
         return iComputerRepository.update(computer);
     }
+
+    @Override
+    public void findId(int id) {
+        iComputerRepository.findId(id);
+    }
 }

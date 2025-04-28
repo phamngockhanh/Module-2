@@ -25,10 +25,12 @@ public class ProductController {
                     TypeOfProductController.displayForDisplayFunction();
                     break;
                 case 2:
+                    TypeOfProductController.displayForAddFunction();
                     break;
                 case 3:
                     break;
                 case 4:
+                    TypeOfProductController.displayForUpdateFunction();
                     break;
                 case 5:
                     flag = false;

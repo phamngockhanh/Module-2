@@ -1,4 +1,6 @@
 package ss17_binary_file.bai_tap.binary_file.service;
 
-public interface IPhoneService {
+import ss17_binary_file.bai_tap.binary_file.entity.Phone;
+
+public interface IPhoneService extends IService<Phone> {
 }
