@@ -23,8 +23,8 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public boolean findId(String id) {
         List<Customer> customers = findAll();
-        for(Customer customer : customers){
-            if(customer.getCustomerId().equals(id)){
+        for (Customer customer : customers) {
+            if (customer.getCustomerId().equals(id)) {
                 return true;
             }
         }
@@ -41,20 +41,34 @@ public class CustomerRepository implements ICustomerRepository {
     @Override
     public void update(Customer customer) {
         List<Customer> customers = findAll();
-        for(int i = 0;i<customers.size();i++){
-            if(customer.getCustomerId().equals(customers.get(i).getCustomerId())){
-                customers.set(i,customer);
+        for (int i = 0; i < customers.size(); i++) {
+            if (customer.getCustomerId().equals(customers.get(i).getCustomerId())) {
+                customers.set(i, customer);
             }
         }
+
+        List<String> stringList = new ArrayList<>();
+        for (Customer customer1 : customers) {
+            stringList.add(customer1.getInfor());
+        }
+        ReadAndWriteFile.writeFileCSV(FILE_PATH, stringList, false);
     }
 
     @Override
     public void delete(String id) {
         List<Customer> customers = findAll();
-        for(Customer customer: customers){
-            if(customer.getCustomerId().equals(id)){
-                customers.remove(customer);
+        for (int i = 0; i < customers.size(); i++) {
+            if (customers.get(i).getCustomerId().equals(id)) {
+                customers.remove(i);
+                break;
             }
         }
+
+        List<String> stringList = new ArrayList<>();
+        for (Customer customer1 : customers) {
+            stringList.add(customer1.getInfor());
+        }
+
+        ReadAndWriteFile.writeFileCSV(FILE_PATH, stringList, false);
     }
 }
