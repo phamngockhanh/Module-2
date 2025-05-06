@@ -21,6 +21,7 @@ public class FuramaController {
             int choice = ExceptionManagement.readInt(sc,"Choose function: ");
             switch (choice){
                 case 1:
+                    FunctionManagementController.employeeManagement();
                     break;
                 case 2:
                     break;

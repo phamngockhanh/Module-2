@@ -1,7 +1,11 @@
 package ss999_case_study.controller;
 
 import ss999_case_study.common.ExceptionManagement;
+import ss999_case_study.entity.Employee;
+import ss999_case_study.service.EmployeeService;
+import ss999_case_study.view.EmployeeView;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class FunctionManagementController {
@@ -9,24 +13,50 @@ public class FunctionManagementController {
 
     public static void employeeManagement() {
         boolean flag = true;
+        EmployeeService employeeService = new EmployeeService();
         do {
             System.out.println("==============================");
             System.out.println("=     Employee Management    =");
             System.out.println("= 1.  Display list employees =");
             System.out.println("= 2.  Add new employee       =");
             System.out.println("= 3.  Edit employee          =");
-            System.out.println("= 4.  Return main menu       =");
+            System.out.println("= 4.  Delete employee       =");
+            System.out.println("= 5.  Return main menu       =");
             System.out.println("==============================");
-            System.out.println("Choose function");
-            int choice = ExceptionManagement.readInt(sc,"Choose function: ");
+            int choice = ExceptionManagement.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
+                    List<Employee> employees = employeeService.findAll();
+                    EmployeeView.display(employees);
                     break;
                 case 2:
+                    Employee employee = EmployeeView.add();
+                    employeeService.add(employee);
                     break;
                 case 3:
+                    String employeeId = EmployeeView.findId();
+                    boolean check = employeeService.findId(employeeId);
+                    if (check) {
+                        Employee employee1 = EmployeeView.update(employeeId);
+                        employeeService.update(employee1);
+                    } else {
+                        System.out.println("Can not find this id!!");
+                    }
                     break;
                 case 4:
+                    String deleteId = EmployeeView.findId();
+                    boolean checkId = employeeService.findId(deleteId);
+                    boolean confirm = EmployeeView.delete();
+                    if (!checkId ) {
+                        System.out.println("Can not find this id!!");
+                    } else if(!confirm){
+                        System.out.println("Cancel delete success!!");
+                    }else{
+                        employeeService.delete(deleteId);
+                        System.out.println("Delete successful!!!");
+                    }
+                    break;
+                case 5:
                     flag = false;
                     break;
                 default:
@@ -47,8 +77,7 @@ public class FunctionManagementController {
             System.out.println("= 3.  Edit customer          =");
             System.out.println("= 4.  Return main menu       =");
             System.out.println("==============================");
-            System.out.println("Choose function");
-            int choice = ExceptionManagement.readInt(sc,"Choose function: ");
+            int choice = ExceptionManagement.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
                     break;
@@ -76,7 +105,7 @@ public class FunctionManagementController {
             System.out.println("= 3.  Display list facility maintenance =");
             System.out.println("= 4.  Return main menu                  =");
             System.out.println("=========================================");
-            int choice = ExceptionManagement.readInt(sc,"Choose function: ");
+            int choice = ExceptionManagement.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
                     break;
@@ -107,7 +136,7 @@ public class FunctionManagementController {
             System.out.println("= 5.  Edit contracts               =");
             System.out.println("= 6.  Return main menu             =");
             System.out.println("====================================");
-            int choice = ExceptionManagement.readInt(sc,"Choose function: ");
+            int choice = ExceptionManagement.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
                     break;
@@ -138,7 +167,7 @@ public class FunctionManagementController {
             System.out.println("= 2.  Display list customers get voucher =");
             System.out.println("= 3.  Return main menu                   =");
             System.out.println("==========================================");
-            int choice = ExceptionManagement.readInt(sc,"Choose function: ");
+            int choice = ExceptionManagement.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
                     break;

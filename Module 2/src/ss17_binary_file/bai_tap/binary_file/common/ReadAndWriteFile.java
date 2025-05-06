@@ -12,7 +12,6 @@ public class ReadAndWriteFile {
             for (String line : list) {
                 bf.write(line);
                 bf.newLine();
-
             }
         } catch (IOException e) {
             System.out.println("Lỗi ghi file");
@@ -25,7 +24,7 @@ public class ReadAndWriteFile {
         List<String> list = new ArrayList<>();
         try (FileReader fr = new FileReader(file);
              BufferedReader br = new BufferedReader(fr)) {
-            String line = "";
+            String line ;
             if((line = br.readLine())!=null){
                 list.add(line);
             }

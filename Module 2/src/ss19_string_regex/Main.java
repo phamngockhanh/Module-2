@@ -7,7 +7,7 @@ public class Main {
 //        boolean check = name.matches(regexName);
 //        System.out.println(check);
         String name = "C0223G";
-        String regexName = "^[CAP]+\\d{4}+[GHIK]$";
+        String regexName = "^[CAP]+\\\\d{4}+[GHIK]$";
         boolean check = name.matches(regexName);
         System.out.println(check);
     }

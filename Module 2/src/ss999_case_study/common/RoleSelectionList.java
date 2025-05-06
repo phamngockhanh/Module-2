@@ -6,6 +6,7 @@ public class RoleSelectionList {
     public static ArrayList<String> educationLevelList = new ArrayList<>();
     public static ArrayList<String> positionList = new ArrayList<>();
     public static ArrayList<String> customerList = new ArrayList<>();
+    public static ArrayList<String> typeOfRentalList = new ArrayList<>();
 
     static{
         educationLevelList.add("Intermediate");
@@ -25,5 +26,10 @@ public class RoleSelectionList {
         customerList.add("Gold");
         customerList.add("Silver");
         customerList.add("Member");
+
+        typeOfRentalList.add("Year");
+        typeOfRentalList.add("Month");
+        typeOfRentalList.add("Day");
+        typeOfRentalList.add("Hour");
     }
 }

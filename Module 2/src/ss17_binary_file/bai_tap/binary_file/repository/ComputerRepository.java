@@ -59,7 +59,6 @@ public class ComputerRepository implements IComputerRepository {
             computers.set(i,computer);
             found=true;
         }
-
         if(found) {
             List<String> stringList = new ArrayList<>();
             for(Computer computer1:computers){
@@ -73,7 +72,6 @@ public class ComputerRepository implements IComputerRepository {
     @Override
     public void findId(int id) {
         List<Computer> computers = findAll();
-
         for (Computer computer1 : computers) {
             if (computer1.getId() == id) {
                 Flag.flag = true;
