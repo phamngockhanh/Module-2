@@ -17,7 +17,7 @@ public class ReadAndWriteFile {
                 bw.newLine();
             }
         } catch (IOException e) {
-            System.out.println("Lỗi ghi file");
+            System.out.println("Can not write file");
             e.printStackTrace();
         }
     }
@@ -34,7 +34,7 @@ public class ReadAndWriteFile {
                 stringList.add(line);
             }
         }  catch (IOException e) {
-            System.out.println("Lỗi đọc file");
+            System.out.println("Can not read file");
             e.printStackTrace();
         }
         return stringList;

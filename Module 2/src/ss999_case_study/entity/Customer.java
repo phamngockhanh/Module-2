@@ -47,6 +47,6 @@ public class Customer extends Person {
     }
 
     public String getInfor() {
-        return super.getInfo() + "," + customerId + "," + typeOfCustomer + "," + address + ",";
+        return super.getInfo() + "," + customerId + "," + typeOfCustomer + "," + address ;
     }
 }

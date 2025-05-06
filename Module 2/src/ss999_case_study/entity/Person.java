@@ -76,6 +76,6 @@ abstract class Person {
     }
 
     public String getInfo() {
-        return fullName + "," + dateOfBirth + "," + gender + "," + phoneNumber + "," + email + "," + identityCard + ",";
+        return fullName + "," + dateOfBirth + "," + gender + "," + phoneNumber + "," + email + "," + identityCard;
     }
 }

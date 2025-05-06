@@ -35,7 +35,7 @@ public class FuramaController {
                     flag = false;
                     break;
                 default:
-                    System.out.println("Vui lòng nhập số từ 1 - 6");
+                    System.out.println("Please input number from 1 to 6!!");
             }
         }while(flag);
     }
