@@ -1,8 +1,11 @@
 package ss999_case_study.controller;
 
 import ss999_case_study.common.ExceptionManagement;
+import ss999_case_study.entity.Customer;
 import ss999_case_study.entity.Employee;
+import ss999_case_study.service.CustomerService;
 import ss999_case_study.service.EmployeeService;
+import ss999_case_study.view.CustomerView;
 import ss999_case_study.view.EmployeeView;
 
 import java.util.List;
@@ -36,24 +39,24 @@ public class FunctionManagementController {
                 case 3:
                     String employeeId = EmployeeView.findId();
                     boolean check = employeeService.findId(employeeId);
-                    if (check) {
+                    if (!check) {
+                        System.out.println("Can not find this id!!");
+                    } else {
                         Employee employee1 = EmployeeView.update(employeeId);
                         employeeService.update(employee1);
-                    } else {
-                        System.out.println("Can not find this id!!");
                     }
                     break;
                 case 4:
                     String deleteId = EmployeeView.findId();
                     boolean checkId = employeeService.findId(deleteId);
-                    boolean confirm = EmployeeView.delete();
-                    if (!checkId ) {
+                    if (!checkId) {
                         System.out.println("Can not find this id!!");
-                    } else if(!confirm){
-                        System.out.println("Cancel delete success!!");
-                    }else{
-                        employeeService.delete(deleteId);
-                        System.out.println("Delete successful!!!");
+                    } else {
+                        boolean confirm = EmployeeView.delete();
+                        if (confirm) {
+                            employeeService.delete(deleteId);
+                            System.out.println("Delete successful!!!");
+                        }
                     }
                     break;
                 case 5:
@@ -69,30 +72,58 @@ public class FunctionManagementController {
 
     public static void customerManagement() {
         boolean flag = true;
+        CustomerService customerService = new CustomerService();
         do {
             System.out.println("==============================");
             System.out.println("=     Customer Management    =");
             System.out.println("= 1.  Display list customers =");
             System.out.println("= 2.  Add new customer       =");
             System.out.println("= 3.  Edit customer          =");
-            System.out.println("= 4.  Return main menu       =");
+            System.out.println("= 4.  Delete customer        =");
+            System.out.println("= 5.  Return main menu       =");
             System.out.println("==============================");
             int choice = ExceptionManagement.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
+                    List<Customer> customers = customerService.findAll();
+                    CustomerView.display(customers);
                     break;
                 case 2:
+                    Customer customer = CustomerView.add();
+                    customerService.add(customer);
                     break;
                 case 3:
+                    String customerId = CustomerView.findId();
+                    boolean check = customerService.findId(customerId);
+                    if (check) {
+                        Customer customer1 = CustomerView.update(customerId);
+                        customerService.update(customer1);
+                    } else {
+                        System.out.println("Can not find this id!!");
+                    }
                     break;
                 case 4:
+                    String deleteId = CustomerView.findId();
+                    boolean checkId = customerService.findId(deleteId);
+                    if (!checkId) {
+                        System.out.println("Can not find this id!!");
+                    } else {
+                        boolean confirm = CustomerView.delete();
+                        if (!confirm) {
+                            customerService.delete(deleteId);
+                            System.out.println("Delete successful!!!");
+                        }
+                    }
+                    break;
+                case 5:
                     flag = false;
                     break;
                 default:
-                    System.out.println("Please choose number from 1 to 4");
+                    System.out.println("Please choose number from 1 to 5");
                     break;
             }
-        } while (flag);
+        }
+        while (flag);
     }
 
     public static void facilityManagement() {

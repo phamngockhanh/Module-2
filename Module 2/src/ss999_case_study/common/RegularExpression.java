@@ -7,13 +7,18 @@ import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class RegularExpression {
-    public static String checkId(Scanner sc, String message) {
+    public static String checkId(Scanner sc, String message, String type) {
         boolean check;
+        String regexId;
         String id;
         do {
             System.out.println(message);
             id = sc.nextLine();
-            String regexId = "^N+V+-+\\d{4}$";
+            if (type.equals("Employee")) {
+                regexId = "^N+V+-+\\d{4}$";
+            } else {
+                regexId = "^K+H+-+\\d{4}$";
+            }
             check = id.matches(regexId);
         } while (!check);
         return id;
@@ -73,16 +78,13 @@ public class RegularExpression {
     }
 
     public static String checkDate(Scanner sc, String message) {
-        boolean check;
         boolean is18Olders;
         String date;
         do {
             System.out.println(message);
             date = sc.nextLine();
-            String regexCheckDay = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/((19|20)\\d\\d)$";
-            check = date.matches(regexCheckDay);
             is18Olders = is18OrOlder(date);
-        } while (!check || !is18Olders);
+        } while (!is18Olders);
         return date;
     }
 
@@ -98,4 +100,5 @@ public class RegularExpression {
             return false;
         }
     }
+
 }

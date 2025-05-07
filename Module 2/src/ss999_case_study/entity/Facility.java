@@ -1,6 +1,6 @@
 package ss999_case_study.entity;
 
-abstract class Facility {
+public class Facility {
     private int serviceCode;
     private String serviceName;
     private double usableArea;
@@ -65,6 +65,12 @@ abstract class Facility {
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
 
     @Override
     public String toString() {

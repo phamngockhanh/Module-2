@@ -28,7 +28,7 @@ public class EmployeeView {
         ArrayList<String> positionList = RoleSelectionList.positionList;
 
         // Nhập id employee
-        String employeeId = RegularExpression.checkId(sc, "Enter employee id:");
+        String employeeId = RegularExpression.checkId(sc, "Enter employee id:", "Employee");
 
         // Nhập tên
         String fullName = RegularExpression.checkName(sc, "Enter name: ");

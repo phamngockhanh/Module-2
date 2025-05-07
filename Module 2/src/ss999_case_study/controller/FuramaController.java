@@ -24,6 +24,7 @@ public class FuramaController {
                     FunctionManagementController.employeeManagement();
                     break;
                 case 2:
+                    FunctionManagementController.customerManagement();
                     break;
                 case 3:
                     break;

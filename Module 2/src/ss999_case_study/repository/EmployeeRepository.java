@@ -69,7 +69,6 @@ public class EmployeeRepository implements IEmployeeRepository {
         for (Employee employee : employees) {
             stringList.add(employee.getInfo());
             ReadAndWriteFile.writeFileCSV(FILE_PATH, stringList, false);
-
         }
     }
 }
