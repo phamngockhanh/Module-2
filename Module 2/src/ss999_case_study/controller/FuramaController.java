@@ -1,6 +1,6 @@
 package ss999_case_study.controller;
 
-import ss999_case_study.common.ExceptionManagement;
+import ss999_case_study.common.RegularExpression;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class FuramaController {
             System.out.println("= 5. Promotion Management=");
             System.out.println("= 6.       Exit          =");
             System.out.println("==========================");
-            int choice = ExceptionManagement.readInt(sc,"Choose function: ");
+            int choice = RegularExpression.readInt(sc,"Choose function: ");
             switch (choice){
                 case 1:
                     FunctionManagementController.employeeManagement();
@@ -27,6 +27,7 @@ public class FuramaController {
                     FunctionManagementController.customerManagement();
                     break;
                 case 3:
+                    FunctionManagementController.facilityManagement();
                     break;
                 case 4:
                     break;

@@ -1,6 +1,5 @@
 package ss999_case_study.view;
 
-import ss999_case_study.common.ExceptionManagement;
 import ss999_case_study.common.RegularExpression;
 import ss999_case_study.common.RoleSelectionList;
 import ss999_case_study.entity.Customer;
@@ -43,7 +42,7 @@ public class CustomerView {
         }
         int choice;
         do{
-            choice = ExceptionManagement.readInt(sc,"Enter type of customer's choice: ");
+            choice = RegularExpression.readInt(sc,"Enter type of customer's choice: ");
             if(choice<0||choice>typeOfCustomer.size()){
                 System.out.printf("Please enter your selection from 1 to %d",typeOfCustomer.size());
             }
@@ -83,7 +82,7 @@ public class CustomerView {
         }
         int choice;
         do{
-            choice = ExceptionManagement.readInt(sc,"Enter type of customer's choice: ");
+            choice = RegularExpression.readInt(sc,"Enter type of customer's choice: ");
             if(choice<0||choice>typeOfCustomer.size()){
                 System.out.printf("Please enter your selection from 1 to %d",typeOfCustomer.size());
             }

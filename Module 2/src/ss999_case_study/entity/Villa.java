@@ -3,7 +3,7 @@ package ss999_case_study.entity;
 public class Villa extends Facility {
     private String freeIncludedServices;
 
-    public Villa(int serviceCode, String serviceName, double usableArea, double rentalCost, int maxOccupancy, String rentalType, String freeIncludedServices) {
+    public Villa(String serviceCode, String serviceName, double usableArea, double rentalCost, int maxOccupancy, String rentalType, String freeIncludedServices) {
         super(serviceCode, serviceName, usableArea, rentalCost, maxOccupancy, rentalType);
         this.freeIncludedServices = freeIncludedServices;
     }
@@ -22,5 +22,9 @@ public class Villa extends Facility {
                 super.toString() +
                 "freeIncludedServices='" + freeIncludedServices + '\'' +
                 '}';
+    }
+
+    public String getInfo(int usagecount) {
+        return super.getInfo() + "," + this.getServiceCode() + "," + usagecount;
     }
 }

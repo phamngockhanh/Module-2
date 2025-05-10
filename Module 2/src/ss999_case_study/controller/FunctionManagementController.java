@@ -1,14 +1,18 @@
 package ss999_case_study.controller;
 
-import ss999_case_study.common.ExceptionManagement;
+import ss999_case_study.common.RegularExpression;
 import ss999_case_study.entity.Customer;
 import ss999_case_study.entity.Employee;
+import ss999_case_study.entity.Facility;
 import ss999_case_study.service.CustomerService;
 import ss999_case_study.service.EmployeeService;
+import ss999_case_study.service.FacilityService;
 import ss999_case_study.view.CustomerView;
 import ss999_case_study.view.EmployeeView;
+import ss999_case_study.view.FacilityView;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class FunctionManagementController {
@@ -26,7 +30,7 @@ public class FunctionManagementController {
             System.out.println("= 4.  Delete employee       =");
             System.out.println("= 5.  Return main menu       =");
             System.out.println("==============================");
-            int choice = ExceptionManagement.readInt(sc, "Choose function: ");
+            int choice = RegularExpression.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
                     List<Employee> employees = employeeService.findAll();
@@ -82,7 +86,7 @@ public class FunctionManagementController {
             System.out.println("= 4.  Delete customer        =");
             System.out.println("= 5.  Return main menu       =");
             System.out.println("==============================");
-            int choice = ExceptionManagement.readInt(sc, "Choose function: ");
+            int choice = RegularExpression.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
                     List<Customer> customers = customerService.findAll();
@@ -127,22 +131,28 @@ public class FunctionManagementController {
     }
 
     public static void facilityManagement() {
+        FacilityService facilityService = new FacilityService();
         boolean flag = true;
         do {
             System.out.println("=========================================");
-            System.out.println("=          Customer Management          =");
+            System.out.println("=          Facility Management          =");
             System.out.println("= 1.  Display list facility             =");
             System.out.println("= 2.  Add new facility                  =");
             System.out.println("= 3.  Display list facility maintenance =");
             System.out.println("= 4.  Return main menu                  =");
             System.out.println("=========================================");
-            int choice = ExceptionManagement.readInt(sc, "Choose function: ");
+            int choice = RegularExpression.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
+                    Map<Facility,Integer> integerMap = facilityService.getAll();
+                    FacilityView.display(integerMap);
                     break;
                 case 2:
+                    addServiceMenu();
                     break;
                 case 3:
+                    Map<Facility,Integer> integerMap1 = facilityService.getMaintenance();
+                    FacilityView.displayMaintenance(integerMap1);
                     break;
                 case 4:
                     flag = false;
@@ -167,7 +177,7 @@ public class FunctionManagementController {
             System.out.println("= 5.  Edit contracts               =");
             System.out.println("= 6.  Return main menu             =");
             System.out.println("====================================");
-            int choice = ExceptionManagement.readInt(sc, "Choose function: ");
+            int choice = RegularExpression.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
                     break;
@@ -189,6 +199,41 @@ public class FunctionManagementController {
         } while (flag);
     }
 
+    public static void addServiceMenu() {
+        FacilityService facilityService = new FacilityService();
+        boolean flag = true;
+        do {
+            System.out.println("==========================================");
+            System.out.println("=           Service Management           =");
+            System.out.println("= 1.  Add New Villa                      =");
+            System.out.println("= 2.  Add New House                      =");
+            System.out.println("= 3.  Add New Room                       =");
+            System.out.println("= 4.  Back To Menu                       =");
+            System.out.println("==========================================");
+            int choice = RegularExpression.readInt(sc, "Choose function: ");
+            switch (choice) {
+                case 1:
+                    Facility facilityVilla = FacilityView.addVilla();
+                    facilityService.add(facilityVilla);
+                    break;
+                case 2:
+                    Facility facilityHouse = FacilityView.addHouse();
+                    facilityService.add(facilityHouse);
+                    break;
+                case 3:
+                    Facility facilityRoom = FacilityView.addRoom();
+                    facilityService.add(facilityRoom);
+                    break;
+                case 4:
+                    flag = false;
+                    break;
+                default:
+                    System.out.println("Please choose number from 1 to 4");
+                    break;
+            }
+        } while (flag);
+    }
+
     public static void promotionManagement() {
         boolean flag = true;
         do {
@@ -198,7 +243,7 @@ public class FunctionManagementController {
             System.out.println("= 2.  Display list customers get voucher =");
             System.out.println("= 3.  Return main menu                   =");
             System.out.println("==========================================");
-            int choice = ExceptionManagement.readInt(sc, "Choose function: ");
+            int choice = RegularExpression.readInt(sc, "Choose function: ");
             switch (choice) {
                 case 1:
                     break;
@@ -214,3 +259,4 @@ public class FunctionManagementController {
         } while (flag);
     }
 }
+

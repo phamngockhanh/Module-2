@@ -1,6 +1,5 @@
 package ss999_case_study.view;
 
-import ss999_case_study.common.ExceptionManagement;
 import ss999_case_study.common.RegularExpression;
 import ss999_case_study.common.RoleSelectionList;
 import ss999_case_study.entity.Employee;
@@ -54,7 +53,7 @@ public class EmployeeView {
         }
         int choice;
         do {
-            choice = ExceptionManagement.readInt(sc, "Enter your education choice: ");
+            choice = RegularExpression.readInt(sc, "Enter your education choice: ");
             if (choice > educationLevelList.size() || choice < 0) {
                 System.out.printf("Please enter value around 1 to %d", educationLevelList.size());
             }
@@ -72,7 +71,7 @@ public class EmployeeView {
         // Lấy danh sách position
         int positionChoice;
         do {
-            positionChoice = ExceptionManagement.readInt(sc, "Enter your position choice: ");
+            positionChoice = RegularExpression.readInt(sc, "Enter your position choice: ");
             if (positionChoice > positionList.size() || positionChoice < 0) {
                 System.out.printf("Please enter value around 1 to %d", positionList.size());
             }
@@ -116,7 +115,7 @@ public class EmployeeView {
         }
         int choice;
         do {
-            choice = ExceptionManagement.readInt(sc, "Enter your choice");
+            choice = RegularExpression.readInt(sc, "Enter your choice");
             if (choice > educationLevelList.size() || choice < 0) {
                 System.out.printf("Please enter value around 1 to %d", educationLevelList.size());
             }
@@ -130,7 +129,7 @@ public class EmployeeView {
         // Lấy danh sách position
         int positionChoice;
         do {
-            positionChoice = ExceptionManagement.readInt(sc, "Enter your position choice: ");
+            positionChoice = RegularExpression.readInt(sc, "Enter your position choice: ");
             if (positionChoice > positionList.size() || positionChoice < 0) {
                 System.out.printf("Please enter value around 1 to %d", positionList.size());
             }

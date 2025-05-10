@@ -7,6 +7,25 @@ import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class RegularExpression {
+    public static int readInt(Scanner sc, String message) {
+        int number = 0;
+        boolean isValid = false;
+
+        while (!isValid) {
+            System.out.println(message);
+            try {
+                number = sc.nextInt();
+                isValid = true;
+                sc.nextLine();
+            } catch (Exception ex) {
+                System.out.println("Invalid input. Please enter an integer number.");
+                sc.nextLine();
+            }
+        }
+        return number;
+    }
+
+
     public static String checkId(Scanner sc, String message, String type) {
         boolean check;
         String regexId;
@@ -100,5 +119,112 @@ public class RegularExpression {
             return false;
         }
     }
+
+    public static String checkServiceCode(Scanner sc, String message, String type) {
+        boolean check;
+        String regexId;
+        String id;
+        do {
+            System.out.println(message);
+            id = sc.nextLine();
+            if (type.equals("Villa")) {
+                regexId = "^S+V+V+L+-+\\d{4}$";
+            } else if (type.equals("House")) {
+                regexId = "^S+V+H+O+-+\\d{4}$";
+            } else {
+                regexId = "^S+V+R+O+-+\\d{4}$";
+            }
+            check = id.matches(regexId);
+        } while (!check);
+        return id;
+    }
+
+    public static String checkNameService(Scanner sc, String message) {
+        boolean check;
+        String regexId;
+        String name;
+        do {
+            System.out.println(message);
+            name = sc.nextLine();
+            regexId = "^([A-Z][a-z]*)(\\s[a-z]*)*$";
+            check = name.matches(regexId);
+        } while (!check);
+        return name;
+    }
+
+    public static double validateArea(Scanner sc, String type, String message) {
+        double area = 0;
+        do {
+            try {
+                System.out.println(message);
+                area = Double.parseDouble(sc.nextLine());
+                if (type.equals("UseableArea")) {
+                    if (area <= 30) {
+                        System.out.println("Use able area must be greater than 30!!");
+                    }
+
+                } else {
+                    if (area <= 30) {
+                        System.out.println("Use able pool area must be greater than 30!!");
+                    }
+                }
+            } catch (NumberFormatException ex) {
+                System.out.println("Invalid input! Please enter a number.");
+            }
+        } while (area <= 30);
+        return area;
+    }
+
+    public static double validateCost(Scanner sc, String message) {
+        double rentalCost = 0;
+        do {
+            try {
+                System.out.println(message);
+                rentalCost = Double.parseDouble(sc.nextLine());
+                if (rentalCost <= 0) {
+                    System.out.println("Must be positive number");
+                }
+            } catch (NumberFormatException ex) {
+                System.out.println("Invalid input! Please enter a number");
+            }
+
+        } while (rentalCost <= 0);
+        return rentalCost;
+    }
+
+    public static int maxOccupancy(Scanner sc, String message) {
+        int maxOccupancy = 0;
+        do {
+            try {
+                System.out.println(message);
+                maxOccupancy = Integer.parseInt(sc.nextLine());
+                if (maxOccupancy <= 0 || maxOccupancy >= 20) {
+                    System.out.println("Value must be between 0 and 20");
+                }
+            } catch (NumberFormatException ex) {
+                System.out.println("Invalid input! Please enter a number");
+            }
+        } while (maxOccupancy <= 0 || maxOccupancy >= 20);
+        return maxOccupancy;
+
+    }
+
+    public static int checkNumberOfFloors(Scanner sc, String message) {
+        int numberOfFloors = 0;
+        do {
+            try {
+                System.out.println(message);
+                numberOfFloors = Integer.parseInt(sc.nextLine());
+                if (numberOfFloors <= 0) {
+                    System.out.println("Must be positive number");
+                }
+            } catch (NumberFormatException ex) {
+                System.out.println("Invalid input! Please enter a number");
+            }
+        } while (numberOfFloors <= 0);
+        return numberOfFloors;
+
+    }
+
 
 }
